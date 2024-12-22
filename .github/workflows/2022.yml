@@ -32,7 +32,7 @@ jobs:
       uses: docker/build-push-action@v6
       with:
         push: true
-        tags: byd1370.azurecr.io/demo:${{ github.sha }} .
+        tags: byd1370.azurecr.io/demo:${{ github.sha }}
         file: ./Dockerfile
   
    
