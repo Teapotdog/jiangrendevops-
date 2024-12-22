@@ -19,19 +19,19 @@ jobs:
     - name: Login to ACR
       uses: azure/docker-login@v1
       with:
-        login-server: <YOUR_ACR_NAME>.azurecr.io
+        login-server: ACR_USERNAME.azurecr.io
         username: ${{ secrets.ACR_USERNAME }}
         password: ${{ secrets.ACR_PASSWORD }}
 
     # Step 3: Build the Docker Image
     - name: Build Docker Image
       run: |
-        docker build -t <YOUR_ACR_NAME>.azurecr.io/my-app:${{ github.sha }} .
+        docker build -t ACR_USERNAME.azurecr.io/my-app:${{ github.sha }} .
 
     # Step 4: Push the Docker Image to ACR
     - name: Push Docker Image
       run: |
-        docker push <YOUR_ACR_NAME>.azurecr.io/my-app:${{ github.sha }}
+        docker push ACR_USERNAME.azurecr.io/my-app:${{ github.sha }}
           
   
    
