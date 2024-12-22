@@ -19,9 +19,9 @@ jobs:
     - name: Login to ACR
       uses: azure/docker-login@v1
       with:
-        login-server: ACR_USERNAME.azurecr.io
-        username: ${{ secrets.ACR_USERNAME }}
-        password: ${{ secrets.ACR_PASSWORD }}
+        login-server: 'ACR_USERNAME.azurecr.io'
+        username: '${{ secrets.ACR_USERNAME }}'
+        password: '${{ secrets.ACR_PASSWORD }}'
 
     # Step 3: Build the Docker Image
     - name: Build Docker Image
