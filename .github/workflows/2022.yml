@@ -23,9 +23,9 @@ jobs:
     - name: Login to ACR
       uses: azure/docker-login@v1
       with:
-        login-server: 'ACR_USERNAME.azurecr.io'
-        username: '${{ secrets.ACR_USERNAME }}'
-        password: '${{ secrets.ACR_PASSWORD }}'
+        login-server: 'byd1370.azurecr.io'
+        username: 'BYD1370'
+        password: 'f1knUSTqhNlOD3lAMtLsft7h2jRkgEm+f7Drh8tQPz+ACRDHqr0z'
 
       
     - name: Build and push
@@ -34,5 +34,7 @@ jobs:
         push: true
         tags: byd1370.azurecr.io/demo:${{ github.sha }}
         file: ./Dockerfile
+        
+
   
    
