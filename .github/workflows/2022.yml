@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-  workflow_dispatch:
+
   
 jobs:
   build-and-push:
@@ -30,7 +30,7 @@ jobs:
       uses: docker/build-push-action@v6
       with:
         push: true
-        tags: BYD1370/Demo:latest
+        tags: BYD1370/demo:latest
         file: ./Dockerfile
   
    
