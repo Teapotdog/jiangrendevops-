@@ -1,11 +1,11 @@
 name: Build and Deploy to Azure
 
 env:
-  AZURE_CONTAINER_REGISTRY_NAME: "acr20241022ray"
-  AZURE_CONTAINER_REGISTRY: "acr20241022ray.azurecr.io"
+  AZURE_CONTAINER_REGISTRY_NAME: "BYD1370"
+  AZURE_CONTAINER_REGISTRY: "byd1370.azurecr.io"
   CONTAINER_NAME: "hello-world"
-  RESOURCE_GROUP: "rg-github-actions-demo"
-  CLUSTER_NAME: "aks-ray-aue"
+  RESOURCE_GROUP: "1"
+  CLUSTER_NAME: "BYD1370"
 
 on:
   push: 
@@ -62,9 +62,9 @@ jobs:
       - name: Azure Login
         uses: Azure/login@v2.2.0
         with:
-          client-id: ${{ secrets.AZURE_CLIENT_ID }}
-          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
-          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+          client-id: 'ea257379-199b-431a-b868-f5bfee2fefb2'
+          tenant-id: 'c940217c-60d9-4d61-b44c-d8f8a70feb10'
+          subscription-id: 'd3415582-e4fb-4727-9794-1b409fd5f57c'
 
       - name: Setup kubelogin
         uses: Azure/use-kubelogin@v1
