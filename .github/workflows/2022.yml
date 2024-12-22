@@ -31,14 +31,14 @@ jobs:
        login-server: "byd1370.azurecr.io"
        # default is https://index.docker.io/v1/
 
-    - name: Github Container Registry: Build and push Docker image
+    - name: Github Container Registry:'Build and push Docker image'
       uses: docker/build-push-action@v5
       with:
         push: true
         # Docker Image name
         docker-image-name: testing2 
         # Docker Image tag
-        docker-image-tag:  tags: user/app:latest
+        docker-image-tag:  tags:user/app:latest
         build-only: false
         # Dockerfile path and name
         dockerfile-path: ./Dockerfile
