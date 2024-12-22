@@ -26,12 +26,12 @@ jobs:
     # Step 3: Build the Docker Image
     - name: Build Docker Image
       run: |
-        docker build -t ACR_USERNAME.azurecr.io/my-app:${{ github.sha }} .
+        docker build -t byd1370.azurecr.io/my-app:${{ github.sha }} .
 
     # Step 4: Push the Docker Image to ACR
     - name: Push Docker Image
       run: |
-        docker push ACR_USERNAME.azurecr.io/my-app:${{ github.sha }}
+        docker push byd1370.azurecr.io/my-app:${{ github.sha }}
           
   
    
