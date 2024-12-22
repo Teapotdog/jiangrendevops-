@@ -1,19 +1,49 @@
-name: GitHub Actions Demo
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
-on:  workflow_dispatch:
+
+name: Testing demo
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
 
 jobs:
-  Explore-GitHub-Actions:
+  build:
     runs-on: ubuntu-latest
+
     steps:
-      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
-      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
-      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
-      - name: Check out repository code
-        uses: actions/checkout@v3
-      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
-      - run: echo "🖥️ The workflow is now ready to test your code on the runner."
-      - name: List files in the repository
-        run: |
-          ls ${{ github.workspace }}
-      - run: echo "🍏 This job's status is ${{ job.status }}."
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v3
+      
+    - name: Azure Container Registry Login
+      uses: Azure/docker-login@v1
+      with:
+        # Container registry username
+       username: "BYD1370"
+       # default is 
+        # Container registry password
+       password: "f1knUSTqhNlOD3lAMtLsft7h2jRkgEm+f7Drh8tQPz+ACRDHqr0z"
+       # default is 
+        # Container registry server URL
+       login-server: "byd1370.azurecr.io"
+       # default is https://index.docker.io/v1/
+
+    - name: Github Container Registry: Build and push Docker image
+      uses: docker/build-push-action@v5
+      with:
+        push: true
+        # Docker Image name
+        docker-image-name: testing2 
+        # Docker Image tag
+        docker-image-tag:  tags: user/app:latest
+        build-only: false
+        # Dockerfile path and name
+        dockerfile-path: ./Dockerfile
+
+     
+          
+  
+   
