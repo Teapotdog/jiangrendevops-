@@ -62,9 +62,9 @@ jobs:
       - name: Azure Login
         uses: Azure/login@v2.2.0
         with:
-          client-id: 'ea257379-199b-431a-b868-f5bfee2fefb2'
-          tenant-id: 'b3cddf40-9654-4a26-86a1-779c51f69c48'
-          subscription-id: '6c33341e-29a1-4ea2-96c3-1353976cfe98'
+          client-id: '2049dced-b92c-45d1-8131-0ea6de1e177f'
+          tenant-id: 'b43212f3-e759-45af-acd9-f00a383eef38'
+          subscription-id: 'd18d73a5-e430-41af-9025-b5bde039e878'
 
       - name: Setup kubelogin
         uses: Azure/use-kubelogin@v1
