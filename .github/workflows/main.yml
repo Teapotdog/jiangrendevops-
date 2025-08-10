@@ -1,11 +1,11 @@
 name: Build and Deploy to Azure
 
 env:
-  AZURE_CONTAINER_REGISTRY_NAME: "handson"
-  AZURE_CONTAINER_REGISTRY: "handson.azurecr.io"
+  AZURE_CONTAINER_REGISTRY_NAME: "handson2"
+  AZURE_CONTAINER_REGISTRY: "handson2.azurecr.io"
   CONTAINER_NAME: "hello-world"
-  RESOURCE_GROUP: "dsf32"
-  CLUSTER_NAME: "unicdemo"
+  RESOURCE_GROUP: "gg"
+  CLUSTER_NAME: "sdaf"
 
 on:
   push: 
@@ -32,7 +32,7 @@ jobs:
            # Container registry username
            username: ${{ env.AZURE_CONTAINER_REGISTRY_NAME }}
            # Container registry password
-           password: 'E2Xifg2qstDcrYeCfpe0qZv1TctS/QUOExtUKHtaC8+ACRDzesWz'
+           password: 'VS0O0+5FmaNoIle6qBClq7EXf5ILHP6GlyDnMyPwky+ACRB9bWL6'
            # Container registry server url
            login-server: ${{ env.AZURE_CONTAINER_REGISTRY }}
 
@@ -63,8 +63,8 @@ jobs:
         uses: Azure/login@v2.2.0
         with:
           client-id: 'ea257379-199b-431a-b868-f5bfee2fefb2'
-          tenant-id: 'c940217c-60d9-4d61-b44c-d8f8a70feb10'
-          subscription-id: 'd3415582-e4fb-4727-9794-1b409fd5f57c'
+          tenant-id: 'b3cddf40-9654-4a26-86a1-779c51f69c48'
+          subscription-id: '6c33341e-29a1-4ea2-96c3-1353976cfe98'
 
       - name: Setup kubelogin
         uses: Azure/use-kubelogin@v1
